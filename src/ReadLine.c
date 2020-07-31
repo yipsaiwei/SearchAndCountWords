@@ -5,16 +5,18 @@
 #include  <string.h>
 
 
-char  **readLines(char  *filename, int *length){
+char  **readLines(char  *filename){
     char  **lines = malloc(sizeof(char *) * 1024);
   char  buffer[1024];
   FILE *fptr;
+  // fopen the filename
   fptr = fopen(filename, "r");
   if (fptr == NULL)
   {
      printf("Issue in opening the input file");
   }
   int i = 0;
+  // Get each line and store in lines
    while( !feof(fptr))
   {
     fgets(buffer, 1024, (FILE*)fptr);
@@ -24,15 +26,12 @@ char  **readLines(char  *filename, int *length){
     lines++;
     i++;
   }
-  *length = i;
+  *lines = NULL;
    for (i; i>0; i--)
   {
     lines--;
   }
   fclose(fptr);
-  // Write your code here
-  // fopen the filename
-  // Get each line and store in lines
   return  lines;
 }
 

@@ -24,25 +24,19 @@ int searchAndCountWordInLine(char *wordToFind, char *line){
 
 int searchAndCountWordInLines(char  *wordToFind, char  *filename){
   int i = 0, count=0;
-  int length;
-  char  **lines = readLines(filename, &length);
-  
-  //lines[0]<=== accessing the first line;
-  //for(each line in line){
-  //should call searchAndCountWordInLine()
-  // sum all count;
-  i= length;
-  while (length!=0){
+  char  **lines = readLines(filename);
+  while (*lines!=NULL){
   //printf("%s\n", *lines);
   count += searchAndCountWordInLine(wordToFind, *lines);
   lines++;
-  length--;
+  i++;
   }
-  for (i; i>0; i--)
+  for (i; i>0; i--)       // Move the pointer to its initial address
   {
     lines--;
   }
   free(*lines);
   return count;
 }
+
 //In the world of today, we have a super computer which can compute complex calculations. the cost of such machine is high. comput science. 

@@ -2,7 +2,7 @@
 #define READLINE_H
 //char  *(*readLines(char *filename))[];
 
-char  **readLines(char  *filename, int *length);
+char  **readLines(char  *filename);
 //void freeLines(char  **lines);
 
 #endif // READLINE_H
