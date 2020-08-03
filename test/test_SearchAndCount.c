@@ -16,7 +16,7 @@ void test_SearchAndCount_given_2_same_words_the(void){
   count = searchAndCountWordInLines(word, filename);
     TEST_ASSERT_EQUAL(2, count);
 }
-
+//"./test/File/FileIO.txt"
 void test_SearchAndCount_given_2_same_words_compute(void){
   //"In the world of today, we have a super computer which can compute complex calculations. the cost of such machine is high. comput science. ";
   int count ;

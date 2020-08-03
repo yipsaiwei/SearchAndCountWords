@@ -1,5 +1,6 @@
 #ifndef READLINE_H
 #define READLINE_H
+#include <stdlib.h>
 //char  *(*readLines(char *filename))[];
 
 char  **readLines(char  *filename);
